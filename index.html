@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookNest | Library Management</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <aside class="sidebar">
+        <h2>📚 BookNest</h2>
+        <p>Library Management System</p>
+
+        <button onclick="showPage('dashboard')">Dashboard</button>
+        <button onclick="showPage('books')">Book Catalogue</button>
+        <button onclick="showPage('members')">Members</button>
+        <button onclick="showPage('issue')">Issue / Return</button>
+        <button onclick="showPage('reports')">Reports</button>
+    </aside>
+
+    <main>
+        <header>
+            <h1>Library Dashboard</h1>
+            <select id="role" onchange="changeRole()">
+                <option value="admin">Admin / Librarian</option>
+                <option value="member">Member</option>
+            </select>
+        </header>
+
+        <section id="dashboard" class="page">
+            <div class="cards">
+                <div class="card">
+                    <h3>Total Books</h3>
+                    <h2>120</h2>
+                </div>
+
+                <div class="card">
+                    <h3>Members</h3>
+                    <h2>45</h2>
+                </div>
+
+                <div class="card">
+                    <h3>Issued Books</h3>
+                    <h2>18</h2>
+                </div>
+
+                <div class="card">
+                    <h3>Overdue Books</h3>
+                    <h2>5</h2>
+                </div>
+            </div>
+
+            <h2>Welcome to BookNest</h2>
+            <p>Manage books, members, circulation and library reports.</p>
+        </section>
+
+        <section id="books" class="page hidden">
+            <h2>Book Catalogue</h2>
+
+            <input id="searchBook"
+                   placeholder="Search book title..."
+                   onkeyup="searchBooks()">
+
+            <table id="bookTable">
+                <tr>
+                    <th>Book ID</th>
+                    <th>Title</th>
+                    <th>Category</th>
+                    <th>Available Copies</th>
+                </tr>
+
+                <tr>
+                    <td>101</td>
+                    <td>Database System Concepts</td>
+                    <td>Academic</td>
+                    <td>2</td>
+                </tr>
+
+                <tr>
+                    <td>102</td>
+                    <td>Clean Code</td>
+                    <td>Programming</td>
+                    <td>1</td>
+                </tr>
+
+                <tr>
+                    <td>103</td>
+                    <td>The Alchemist</td>
+                    <td>Fiction</td>
+                    <td>3</td>
+                </tr>
+            </table>
+        </section>
+
+        <section id="members" class="page hidden">
+            <h2>Member Management</h2>
+
+            <table>
+                <tr>
+                    <th>Member ID</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                </tr>
+
+                <tr>
+                    <td>1001</td>
+                    <td>Aarav Sharma</td>
+                    <td>aarav@example.com</td>
+                </tr>
+
+                <tr>
+                    <td>1002</td>
+                    <td>Meera Gupta</td>
+                    <td>meera@example.com</td>
+                </tr>
+            </table>
+        </section>
+
+        <section id="issue" class="page hidden">
+            <h2>Issue / Return Book</h2>
+
+            <label>Member ID</label>
+            <input type="number" id="memberId">
+
+            <label>Book ID</label>
+            <input type="number" id="bookId">
+
+            <button onclick="issueBook()">Issue Book</button>
+            <button onclick="returnBook()">Return Book</button>
+
+            <p id="message"></p>
+        </section>
+
+        <section id="reports" class="page hidden">
+            <h2>Library Reports</h2>
+
+            <ul>
+                <li>Monthly Attendance / Member Activity</li>
+                <li>Book Inventory Report</li>
+                <li>Issued Books Report</li>
+                <li>Overdue Books Report</li>
+                <li>Fine Details Report</li>
+            </ul>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
