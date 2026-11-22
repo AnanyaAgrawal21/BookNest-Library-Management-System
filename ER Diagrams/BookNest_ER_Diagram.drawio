@@ -1,0 +1,70 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="BookNest ER Diagram" id="thS854Jy6fvXCFPndxao">
+    <mxGraphModel dx="1776" dy="969" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="_jMcYt65XQ7abYjeO-hz-1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FCE4EC;strokeColor=#AD1457;fontColor=#3B1230;fontSize=14;align=left;verticalAlign=middle;spacingLeft=12;spacingTop=8;" value="&lt;b&gt;CATEGORY&lt;/b&gt;&lt;hr/&gt;PK  Category_ID&lt;br/&gt;Category_Name&lt;br/&gt;Description" vertex="1">
+          <mxGeometry height="142" width="240" x="40" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="_jMcYt65XQ7abYjeO-hz-2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FCE4EC;strokeColor=#AD1457;fontColor=#3B1230;fontSize=14;align=left;verticalAlign=middle;spacingLeft=12;spacingTop=8;" value="&lt;b&gt;BOOK&lt;/b&gt;&lt;hr/&gt;PK  Book_ID&lt;br/&gt;Title&lt;br/&gt;ISBN (UNIQUE)&lt;br/&gt;Publisher&lt;br/&gt;Publication_Year&lt;br/&gt;Price&lt;br/&gt;FK  Category_ID" vertex="1">
+          <mxGeometry height="238" width="240" x="340" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="_jMcYt65XQ7abYjeO-hz-3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FCE4EC;strokeColor=#AD1457;fontColor=#3B1230;fontSize=14;align=left;verticalAlign=middle;spacingLeft=12;spacingTop=8;" value="&lt;b&gt;BOOK_COPY&lt;/b&gt;&lt;hr/&gt;PK  Copy_ID&lt;br/&gt;FK  Book_ID&lt;br/&gt;Status&lt;br/&gt;Shelf_Location&lt;br/&gt;Acquisition_Date" vertex="1">
+          <mxGeometry height="190" width="240" x="680" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="_jMcYt65XQ7abYjeO-hz-4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FCE4EC;strokeColor=#AD1457;fontColor=#3B1230;fontSize=14;align=left;verticalAlign=middle;spacingLeft=12;spacingTop=8;" value="&lt;b&gt;AUTHOR&lt;/b&gt;&lt;hr/&gt;PK  Author_ID&lt;br/&gt;Author_Name&lt;br/&gt;Email (UNIQUE)&lt;br/&gt;Country" vertex="1">
+          <mxGeometry height="166" width="240" x="40" y="390" as="geometry" />
+        </mxCell>
+        <mxCell id="_jMcYt65XQ7abYjeO-hz-5" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FCE4EC;strokeColor=#AD1457;fontColor=#3B1230;fontSize=14;align=left;verticalAlign=middle;spacingLeft=12;spacingTop=8;" value="&lt;b&gt;BOOK_AUTHOR&lt;/b&gt;&lt;hr/&gt;PK, FK  Book_ID&lt;br/&gt;PK, FK  Author_ID" vertex="1">
+          <mxGeometry height="118" width="240" x="340" y="390" as="geometry" />
+        </mxCell>
+        <mxCell id="_jMcYt65XQ7abYjeO-hz-6" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FCE4EC;strokeColor=#AD1457;fontColor=#3B1230;fontSize=14;align=left;verticalAlign=middle;spacingLeft=12;spacingTop=8;" value="&lt;b&gt;MEMBER&lt;/b&gt;&lt;hr/&gt;PK  Member_ID&lt;br/&gt;Member_Name&lt;br/&gt;Email (UNIQUE)&lt;br/&gt;Phone&lt;br/&gt;Department&lt;br/&gt;Registration_Date" vertex="1">
+          <mxGeometry height="214" width="240" x="40" y="680" as="geometry" />
+        </mxCell>
+        <mxCell id="_jMcYt65XQ7abYjeO-hz-7" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FCE4EC;strokeColor=#AD1457;fontColor=#3B1230;fontSize=14;align=left;verticalAlign=middle;spacingLeft=12;spacingTop=8;" value="&lt;b&gt;LIBRARIAN&lt;/b&gt;&lt;hr/&gt;PK  Librarian_ID&lt;br/&gt;Librarian_Name&lt;br/&gt;Email (UNIQUE)&lt;br/&gt;Phone&lt;br/&gt;Joining_Date" vertex="1">
+          <mxGeometry height="190" width="240" x="680" y="390" as="geometry" />
+        </mxCell>
+        <mxCell id="_jMcYt65XQ7abYjeO-hz-8" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FCE4EC;strokeColor=#AD1457;fontColor=#3B1230;fontSize=14;align=left;verticalAlign=middle;spacingLeft=12;spacingTop=8;" value="&lt;b&gt;ISSUE&lt;/b&gt;&lt;hr/&gt;PK  Issue_ID&lt;br/&gt;FK  Member_ID&lt;br/&gt;FK  Copy_ID&lt;br/&gt;FK  Librarian_ID&lt;br/&gt;Issue_Date&lt;br/&gt;Due_Date&lt;br/&gt;Status" vertex="1">
+          <mxGeometry height="238" width="240" x="980" y="390" as="geometry" />
+        </mxCell>
+        <mxCell id="_jMcYt65XQ7abYjeO-hz-9" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FCE4EC;strokeColor=#AD1457;fontColor=#3B1230;fontSize=14;align=left;verticalAlign=middle;spacingLeft=12;spacingTop=8;" value="&lt;b&gt;RETURN&lt;/b&gt;&lt;hr/&gt;PK  Return_ID&lt;br/&gt;FK  Issue_ID (UNIQUE)&lt;br/&gt;Return_Date&lt;br/&gt;Book_Condition&lt;br/&gt;Remarks" vertex="1">
+          <mxGeometry height="190" width="240" x="1280" y="390" as="geometry" />
+        </mxCell>
+        <mxCell id="_jMcYt65XQ7abYjeO-hz-10" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FCE4EC;strokeColor=#AD1457;fontColor=#3B1230;fontSize=14;align=left;verticalAlign=middle;spacingLeft=12;spacingTop=8;" value="&lt;b&gt;FINE&lt;/b&gt;&lt;hr/&gt;PK  Fine_ID&lt;br/&gt;FK  Return_ID (UNIQUE)&lt;br/&gt;Fine_Amount&lt;br/&gt;Payment_Status&lt;br/&gt;Payment_Date&lt;br/&gt;Payment_Method" vertex="1">
+          <mxGeometry height="214" width="240" x="1280" y="680" as="geometry" />
+        </mxCell>
+        <mxCell id="_jMcYt65XQ7abYjeO-hz-11" edge="1" parent="1" source="_jMcYt65XQ7abYjeO-hz-1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#AD1457;strokeWidth=2;endArrow=block;endFill=1;fontSize=12;fontColor=#6A1745;labelBackgroundColor=#FFFFFF;" target="_jMcYt65XQ7abYjeO-hz-2" value="1 : M  classifies">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="_jMcYt65XQ7abYjeO-hz-12" edge="1" parent="1" source="_jMcYt65XQ7abYjeO-hz-2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#AD1457;strokeWidth=2;endArrow=block;endFill=1;fontSize=12;fontColor=#6A1745;labelBackgroundColor=#FFFFFF;" target="_jMcYt65XQ7abYjeO-hz-3" value="1 : M  has copies">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="_jMcYt65XQ7abYjeO-hz-13" edge="1" parent="1" source="_jMcYt65XQ7abYjeO-hz-2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#AD1457;strokeWidth=2;endArrow=block;endFill=1;fontSize=12;fontColor=#6A1745;labelBackgroundColor=#FFFFFF;" target="_jMcYt65XQ7abYjeO-hz-5" value="1 : M">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="_jMcYt65XQ7abYjeO-hz-14" edge="1" parent="1" source="_jMcYt65XQ7abYjeO-hz-4" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#AD1457;strokeWidth=2;endArrow=block;endFill=1;fontSize=12;fontColor=#6A1745;labelBackgroundColor=#FFFFFF;" target="_jMcYt65XQ7abYjeO-hz-5" value="1 : M">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="_jMcYt65XQ7abYjeO-hz-15" edge="1" parent="1" source="_jMcYt65XQ7abYjeO-hz-6" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#AD1457;strokeWidth=2;endArrow=block;endFill=1;fontSize=12;fontColor=#6A1745;labelBackgroundColor=#FFFFFF;" target="_jMcYt65XQ7abYjeO-hz-8" value="1 : M  borrows">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="_jMcYt65XQ7abYjeO-hz-16" edge="1" parent="1" source="_jMcYt65XQ7abYjeO-hz-3" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#AD1457;strokeWidth=2;endArrow=block;endFill=1;fontSize=12;fontColor=#6A1745;labelBackgroundColor=#FFFFFF;" target="_jMcYt65XQ7abYjeO-hz-8" value="1 : M  is issued in">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="_jMcYt65XQ7abYjeO-hz-17" edge="1" parent="1" source="_jMcYt65XQ7abYjeO-hz-7" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#AD1457;strokeWidth=2;endArrow=block;endFill=1;fontSize=12;fontColor=#6A1745;labelBackgroundColor=#FFFFFF;" target="_jMcYt65XQ7abYjeO-hz-8" value="1 : M  processes">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="_jMcYt65XQ7abYjeO-hz-18" edge="1" parent="1" source="_jMcYt65XQ7abYjeO-hz-8" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#AD1457;strokeWidth=2;endArrow=block;endFill=1;fontSize=12;fontColor=#6A1745;labelBackgroundColor=#FFFFFF;" target="_jMcYt65XQ7abYjeO-hz-9" value="1 : 0..1  has return">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="_jMcYt65XQ7abYjeO-hz-19" edge="1" parent="1" source="_jMcYt65XQ7abYjeO-hz-9" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#AD1457;strokeWidth=2;endArrow=block;endFill=1;fontSize=12;fontColor=#6A1745;labelBackgroundColor=#FFFFFF;" target="_jMcYt65XQ7abYjeO-hz-10" value="1 : 0..1  may generate">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="_jMcYt65XQ7abYjeO-hz-20" parent="1" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=24;fontColor=#7A174F;" value="&lt;b&gt;BookNest – Library Management System&lt;br/&gt;ER Diagram (Phase 1 Draft)&lt;/b&gt;" vertex="1">
+          <mxGeometry height="55" width="800" x="350" y="20" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
